@@ -38,6 +38,9 @@ jobs:
       - name: Run tests
         run: ./mvnw test
 
+      - name: Package application
+        run: ./mvnw package -DskipTests
+
       - name: Configure AWS credentials
         if: github.event_name == 'push'
         uses: aws-actions/configure-aws-credentials@v6
